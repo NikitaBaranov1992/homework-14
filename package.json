@@ -1,0 +1,17 @@
+{
+  "name": "homework-14",
+  "version": "1.0.0",
+  "description": "1st cypress test",
+  "main": "1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Nikita Baranov",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.12.0"
+  }
+}
