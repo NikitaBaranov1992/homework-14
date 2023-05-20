@@ -4,7 +4,7 @@
   "description": "1st cypress test",
   "main": "1.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:dashboard": "npx cypress run --record --key 1317bc29-cbb9-486f-ab85-985cbfaa971a"
   },
   "keywords": [
     "cypress"
