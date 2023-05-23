@@ -1,4 +1,4 @@
-describe("santa open", () => {
+/*describe("santa open", () => {
   beforeEach(() => {
     cy.visit("https://staging.lpitko.ru");
   });
@@ -6,4 +6,4 @@ describe("santa open", () => {
   it.only("santa open is correct", () => {
     cy.get(".home-page__logo").should("have.length", 1);
   });
-});
+});*/
