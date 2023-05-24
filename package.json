@@ -4,7 +4,10 @@
   "description": "1st cypress test",
   "main": "1.js",
   "scripts": {
-    "cy:dashboard": "npx cypress run --record --key 1317bc29-cbb9-486f-ab85-985cbfaa971a"
+    "cy:dashboard": "npx cypress run --record --key 1317bc29-cbb9-486f-ab85-985cbfaa971a",
+    "cy:chrome": "npx cypress run --browser chrome",
+    "cy:electron": "npx cypress run --browser electron",
+    "cy:run:all": "npm run cy:electron && npm run cy:chrome"
   },
   "keywords": [
     "cypress"
