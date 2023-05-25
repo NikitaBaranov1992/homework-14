@@ -1,6 +1,7 @@
 describe("santa open", () => {
   beforeEach(() => {
-    cy.visit("https://staging.lpitko.ru");
+    Cypress.config("baseUrl", "https://santa-secret.ru");
+    cy.visit("https://santa-secret.ru");
   });
 
   it.only("santa open is correct", () => {

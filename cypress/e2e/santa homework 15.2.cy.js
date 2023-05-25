@@ -1,6 +1,7 @@
 describe("santa", () => {
   beforeEach(() => {
-    cy.visit("https://staging.lpitko.ru/login");
+    Cypress.config("baseUrl", "https://santa-secret.ru");
+    cy.visit("/login");
     cy.get("[name=email]").type("4932843@gmail.com");
     cy.get("[name=password]").type("GoodPassword10");
     cy.get(".form-auth__button").click();
