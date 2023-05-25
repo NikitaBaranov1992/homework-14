@@ -5,9 +5,10 @@
   "main": "1.js",
   "scripts": {
     "cy:dashboard": "npx cypress run --record --key 1317bc29-cbb9-486f-ab85-985cbfaa971a",
-    "cy:chrome": "npx cypress run --browser chrome",
-    "cy:electron": "npx cypress run --browser electron",
+    "cy:chrome": "npx cypress run --spec 'cypress/e2e/santa homework 14.2.cy.js' --browser chrome --record --key 1317bc29-cbb9-486f-ab85-985cbfaa971a",
+    "cy:electron": "npx cypress run --spec 'cypress/e2e/santa homework 15.2.cy.js' --browser electron --record --key 1317bc29-cbb9-486f-ab85-985cbfaa971a",
     "cy:run:all": "npm run cy:electron && npm run cy:chrome"
+    
   },
   "keywords": [
     "cypress"
