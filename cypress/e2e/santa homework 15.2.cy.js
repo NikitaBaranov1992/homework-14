@@ -1,3 +1,7 @@
+before(() => {
+  cy.log("Run tests");
+});
+
 describe("santa", () => {
   beforeEach(() => {
     Cypress.config("baseUrl", "https://santa-secret.ru");
