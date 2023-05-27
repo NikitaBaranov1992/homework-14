@@ -13,26 +13,26 @@ describe("santa", () => {
 
   it("account", () => {
     cy.contains("Никита Баранов").click({ force: true });
-    cy.location("pathname").should("eq", "/account");
+    cy.locUrl("/account");
     cy.go("back");
   });
 
   it("boxes", () => {
     cy.contains("Коробки").click({ force: true });
-    cy.location("pathname").should("eq", "/account/boxes");
+    cy.locUrl("/account/boxes");
     cy.go("back");
   });
 
   it("randomizer", () => {
     cy.contains("Быстрая жеребьевка").click();
-    cy.location("pathname").should("eq", "/randomizer");
+    cy.locUrl("/randomizer");
     cy.go("back");
   });
 
   it("add box", () => {
     cy.contains("Создать коробку").click();
     //cy.get(".txt-secondary txt txt--grey").should("have.length", 1);
-    cy.location("pathname").should("eq", "/box/new");
+    cy.locUrl("/box/new");
     cy.go("back");
   });
 });
