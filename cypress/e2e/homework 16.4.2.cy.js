@@ -6,20 +6,24 @@ describe("santaRegist", () => {
   });
 
   it("Password null", () => {
-    cy.get(":nth-child(3) > .frm").type("Ab@mail.ru");
-    cy.contains("Войти").click({ force: true });
+    cy.enterText(":nth-child(3) > .frm", "Ab@mail.ru");
+    cy.get(".btn-main").click({ force: true });
     cy.contains("Обязательное поле").should("exist");
   });
 
   it("Negative email", () => {
-    cy.get(":nth-child(3) > .frm").type("1");
+    cy.enterText(":nth-child(3) > .frm", "1");
     cy.get(":nth-child(4) > .frm").click({ force: true });
     cy.contains("Некорректный email").should("exist");
   });
 
   it("Positive email", () => {
-    cy.get(":nth-child(3) > .frm").type("Ab@mail.ru");
+    cy.enterText(":nth-child(3) > .frm", "Ab@mail.ru");
     cy.get(":nth-child(4) > .frm").click({ force: true });
     cy.contains("Некорректный email").should("not.exist");
   });
+});
+
+after(() => {
+  console.log("Directed by Robert B. Weide");
 });

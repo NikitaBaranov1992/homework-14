@@ -27,3 +27,7 @@
 Cypress.Commands.add("locUrl", (endpoint) => {
   cy.location("pathname").should("eq", endpoint);
 });
+
+Cypress.Commands.add("enterText", (selector, text) => {
+  cy.get(selector).type(`${text}`);
+});
