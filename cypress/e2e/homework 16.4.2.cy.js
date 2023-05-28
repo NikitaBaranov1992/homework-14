@@ -1,3 +1,6 @@
+let nameSanta = ":nth-child(3) > .frm";
+let emailSanta = ":nth-child(4) > .frm";
+
 describe("santaRegist", () => {
   beforeEach(() => {
     Cypress.config("baseUrl", "https://santa-secret.ru");
@@ -6,20 +9,20 @@ describe("santaRegist", () => {
   });
 
   it("Password null", () => {
-    cy.enterText(":nth-child(3) > .frm", "Ab@mail.ru");
+    cy.enterText(nameSanta, "Ab@mail.ru");
     cy.get(".btn-main").click({ force: true });
     cy.contains("Обязательное поле").should("exist");
   });
 
   it("Negative email", () => {
-    cy.enterText(":nth-child(3) > .frm", "1");
-    cy.get(":nth-child(4) > .frm").click({ force: true });
+    cy.enterText(nameSanta, "1");
+    cy.get(emailSanta).click({ force: true });
     cy.contains("Некорректный email").should("exist");
   });
 
   it("Positive email", () => {
-    cy.enterText(":nth-child(3) > .frm", "Ab@mail.ru");
-    cy.get(":nth-child(4) > .frm").click({ force: true });
+    cy.enterText(nameSanta, "Ab@mail.ru");
+    cy.get(emailSanta).click({ force: true });
     cy.contains("Некорректный email").should("not.exist");
   });
 });
