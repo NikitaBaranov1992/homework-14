@@ -9,4 +9,9 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
+  env: {
+    environment: "production",
+    email: "4932843@gmail.com",
+    password: "GoodPassword10",
+  },
 });

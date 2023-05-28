@@ -1,3 +1,6 @@
+let email = Cypress.env("email");
+let password = Cypress.env("password");
+
 before(() => {
   cy.log("Run tests");
 });
@@ -6,9 +9,10 @@ describe("santa", () => {
   beforeEach(() => {
     Cypress.config("baseUrl", "https://santa-secret.ru");
     cy.visit("/login");
-    cy.get("[name=email]").type("4932843@gmail.com");
-    cy.get("[name=password]").type("GoodPassword10");
+    cy.get("[name=email]").type(email);
+    cy.get("[name=password]").type(password);
     cy.get(".form-auth__button").click();
+    cy.wait(500);
   });
 
   it("account", () => {
@@ -31,7 +35,6 @@ describe("santa", () => {
 
   it("add box", () => {
     cy.contains("Создать коробку").click();
-    //cy.get(".txt-secondary txt txt--grey").should("have.length", 1);
     cy.locUrl("/box/new");
     cy.go("back");
   });
